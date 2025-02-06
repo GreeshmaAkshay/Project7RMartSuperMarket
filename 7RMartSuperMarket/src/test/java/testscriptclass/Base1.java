@@ -3,7 +3,7 @@ package testscriptclass;
 import org.testng.annotations.Test;
 
 import constants.Constant;
-import utilities.ScrnShotUtility;
+import utilities.ScreenShotUtility;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
@@ -56,7 +56,7 @@ public class Base1 {
   @AfterMethod
   public void afterMethod(ITestResult itResult) throws IOException {
 	  if (itResult.getStatus() == ITestResult.FAILURE) {
-		  ScrnShotUtility sc = new ScrnShotUtility();
+		  ScreenShotUtility sc = new ScreenShotUtility();
 			sc.captureFailureScreenShot(driver, itResult.getName());
 		}
 		if (driver != null) {
