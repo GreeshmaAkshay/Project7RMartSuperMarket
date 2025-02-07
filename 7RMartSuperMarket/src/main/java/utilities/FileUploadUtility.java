@@ -13,7 +13,7 @@ public class FileUploadUtility {
 		element.sendKeys(path);
 	}
 	public void roboKeysForFileUpload(WebElement element, String path) throws AWTException {
-		StringSelection str_selection = new StringSelection(path);
+		StringSelection str_selection = new StringSelection("C:\\Users\\GREESHMA GB\\Downloads.jpeg");
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str_selection, null); // cpaste to clipboard
 		Robot robot = new Robot();
 		robot.delay(2000);

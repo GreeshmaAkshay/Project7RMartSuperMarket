@@ -11,11 +11,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import constants.Constant;
+import utilities.FileUploadUtility;
 import utilities.PageUtility;
 
 public class SubCategoryPage {
 	public WebDriver driver;
 	PageUtility pageutility = new PageUtility();
+	
 	public SubCategoryPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -34,17 +37,8 @@ public class SubCategoryPage {
 		return this;
 	}
 	public SubCategoryPage upload_file() throws AWTException {
-		fileUpload.click();
-		StringSelection str_selection  = new StringSelection("C:\\Users\\GREESHMA GB\\Downloads.jpeg");
-		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str_selection,null);//copy to clipboard
-		Robot robot = new Robot();
-		//robot.delay(2000);
-		robot.keyPress(KeyEvent.VK_CONTROL);
-		robot.keyPress(KeyEvent.VK_V);
-		robot.keyRelease(KeyEvent.VK_CONTROL);
-		robot.keyRelease(KeyEvent.VK_V);
-		robot.keyPress(KeyEvent.VK_ENTER);
-		robot.keyRelease(KeyEvent.VK_ENTER);
+		FileUploadUtility file_upload_utility = new FileUploadUtility();
+		file_upload_utility.roboKeysForFileUpload(fileUpload,Constant.FILE);
 		return this;
 	}
 	public SubCategoryPage saveSubCategory() {

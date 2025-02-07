@@ -23,7 +23,6 @@ public class HomePage {
 		 return new AdminUsers(driver);
 	 }
 	public ManageProductPage manageProductDivision() {
-		//manageProductMoreInfo.click();
 		driver.navigate().to("https://groceryapp.uniqassosiates.com/admin/list-product");
 		return new ManageProductPage(driver);
 	}

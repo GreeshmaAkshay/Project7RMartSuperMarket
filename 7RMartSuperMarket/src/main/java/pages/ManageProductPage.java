@@ -6,10 +6,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import utilities.PageUtility;
 import utilities.WaitUtility;
 
 public class ManageProductPage {
 	public WebDriver driver;
+	PageUtility pageutility = new PageUtility();
 	public ManageProductPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -43,8 +45,7 @@ public class ManageProductPage {
 		return this;                                                    
 	}
 	public ManageProductPage selectSubCategory() {
-		Select sub_category = new Select(selectCategory);
-		sub_category.selectByValue("561");
+		pageutility.selectByValue(selectCategory,"561");
 		return this;                                                    
 	}
 	public ManageProductPage searchProduct() {

@@ -21,7 +21,7 @@ public class ManageContactPage {
 	public ManageContactPage clickActionButton() {
 		actionButton.click();
 		return this;
-	}///////
+	}
 	public ManageContactPage enterPhoneNumber(String phone) {
 		enterPhone.sendKeys(phone);
 		return this;

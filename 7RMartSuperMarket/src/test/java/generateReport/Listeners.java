@@ -15,7 +15,7 @@ public class Listeners implements ITestListener{
 	ExtentTest test;
 
 	ExtentReports extent = ExtendReportUtility.createExtentReports();
-	ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
+	ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();//used to prevent the overlapping of test execution
 
 	public void onTestStart(ITestResult result) {// calls when test methods starts
 		ITestListener.super.onTestStart(result);
@@ -39,7 +39,7 @@ public class Listeners implements ITestListener{
 					.get(result.getInstance());
 		} catch (IllegalArgumentException e) {
 
-			e.printStackTrace();
+			e.printStackTrace();//generate the report contains why the test is failed
 		} catch (IllegalAccessException e) {
 
 			e.printStackTrace();

@@ -50,8 +50,6 @@ public class AdminUsers {
 	}
 
 	public AdminUsers selectAdminType() {
-		//Select selectadmin = new Select(adminSelector);
-		//selectadmin.selectByValue("db");
 		pageutility.selectByValue(adminSelector, "db");
 		return this;
 	}
@@ -80,8 +78,7 @@ public class AdminUsers {
 		return this;
 	}
 	public AdminUsers selectType() {
-		Select selectadmin = new Select(adminSerchType);
-		selectadmin.selectByValue("staff");
+		pageutility.selectByValue(adminSerchType,"staff");
 		return this;
 	}
 
