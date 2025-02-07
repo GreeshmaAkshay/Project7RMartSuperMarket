@@ -12,34 +12,37 @@ public class HomePage {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	@FindBy(className="img-circle")private WebElement admin;
+	@FindBy(xpath = "(//a[@class='small-box-footer'])[1]")private WebElement admin;
 	@FindBy(xpath="//a[@class='dropdown-item']")private WebElement logoutButton;
 	@FindBy(linkText = "admin/list-admin")private WebElement adminuser;
 	@FindBy(xpath="//a[@class='small-box-footer'][8]")private WebElement manageProductMoreInfo;
 	 @FindBy(xpath="//a[@class='small-box-footer'][9]")private WebElement manageNewsMoreInfo;
+	 @FindBy(xpath = "(//a[@class='small-box-footer'])[3]")private WebElement footerText;
+	 @FindBy(xpath = "(//a[@class='small-box-footer'])[4]")private WebElement sub_category;
+	 @FindBy(xpath = "(//a[@class='small-box-footer'])[5]")private WebElement manageContactInfo;
 	 
 	public AdminUsers clickAdminUserDivision() { 
-		 driver.navigate().to("https://groceryapp.uniqassosiates.com/admin/list-admin");
+		 admin.click();
 		 return new AdminUsers(driver);
 	 }
 	public ManageProductPage manageProductDivision() {
-		driver.navigate().to("https://groceryapp.uniqassosiates.com/admin/list-product");
+		manageProductMoreInfo.click();
 		return new ManageProductPage(driver);
 	}
 	public ManageNewsPage click_manageNewsMoreInfo() {
-		 driver.navigate().to("https://groceryapp.uniqassosiates.com/admin/list-news");
+		manageNewsMoreInfo.click();
 		 return new ManageNewsPage(driver);
 	 }
 	public FooterTextPage click_footerTextpage() {
-		driver.navigate().to("https://groceryapp.uniqassosiates.com/admin/list-footertext");
+		footerText.click();
 		return new FooterTextPage(driver);
 	}
 	public SubCategoryPage click_SubCategory_Division() {
-		driver.navigate().to("https://groceryapp.uniqassosiates.com/admin/Subcategory/add");
+		sub_category.click();
 		return new SubCategoryPage(driver);
 	}
 	public ManageContactPage click_manageContactDivision() {
-		driver.navigate().to("https://groceryapp.uniqassosiates.com/admin/list-contact");
+		manageContactInfo.click();
 		return new ManageContactPage(driver);
 	}
 	public LoginPage1 clickLogout() {

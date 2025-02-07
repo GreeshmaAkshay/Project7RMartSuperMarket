@@ -46,8 +46,6 @@ public class Base1 {
 		} else {
 			throw new Exception("invalid browser");
 		}
-		//driver = new ChromeDriver();
-		//driver.get("https://groceryapp.uniqassosiates.com/admin/login");
 		driver.get(properties.getProperty("url"));
 		driver.manage().window().maximize();	
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -62,7 +60,7 @@ public class Base1 {
 		if (driver != null) {
 			driver.quit();
 		}
-	 //driver.close();
+	
   }
 
 }

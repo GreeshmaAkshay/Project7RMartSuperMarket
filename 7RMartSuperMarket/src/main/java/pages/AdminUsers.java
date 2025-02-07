@@ -1,5 +1,7 @@
 package pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import utilities.PageUtility;
+import utilities.WaitUtility;
 
 public class AdminUsers {
 	public WebDriver driver;
@@ -83,6 +86,8 @@ public class AdminUsers {
 	}
 
 	public AdminUsers searchButton() {
+		WaitUtility wait = new WaitUtility();
+		 wait.waitforElementToClickSearchButton(driver, SearchButton);
 		SearchButton.click();
 		return this;
 	}

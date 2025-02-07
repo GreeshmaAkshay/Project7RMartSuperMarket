@@ -1,9 +1,13 @@
 package pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import utilities.WaitUtility;
 
 public class ManageNewsPage {
 	public WebDriver driver;
@@ -26,6 +30,8 @@ public class ManageNewsPage {
 		 return this;
 	 }
 	 public ManageNewsPage saveNews() {
+		 WaitUtility wait = new WaitUtility();
+		 wait.waitForElementOfclickOnSaveButtonOfManageNews(driver, saveNewsButton);
 		 saveNewsButton.click();
 		 return this;
 	 }

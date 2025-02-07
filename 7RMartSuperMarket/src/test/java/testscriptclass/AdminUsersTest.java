@@ -29,9 +29,8 @@ public class AdminUsersTest extends Base1{
 		String passwordField = faker.getPassword();
 		
 		admin.clickNewButton().enterAdminUsername(usernameField).enterAdminPassword(passwordField).selectAdminType().saveButton();
-		String expected = "https://groceryapp.uniqassosiates.com/admin/list-admin?add=1";
-		String actual = driver.getCurrentUrl();
-		Assert.assertEquals(expected, actual,Constant.ERROR_MESSAGE_FOR_INVALID_USER_CREATION);
+		boolean statusMessage = admin.isDangerAlertIsDisplayed();
+		Assert.assertEquals(statusMessage,Constant.ERROR_MESSAGE_FOR_INVALID_USER_CREATION);
 	}
   @Test
   public void search_admin_users() throws IOException {
