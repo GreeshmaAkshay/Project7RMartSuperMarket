@@ -15,7 +15,7 @@ public class ManageNewsTest extends Base1{
 	HomePage home;
 	ManageNewsPage news;
   @Test
-  public void create_news() throws IOException {
+  public void verify_create_news() throws IOException {
 		LoginPage1 loginPage = new LoginPage1(driver);
 		String username = ExcelUtility.readStringData(3, 0, "LoginPage");
 		String password = ExcelUtility.readStringData(3, 1, "LoginPage");

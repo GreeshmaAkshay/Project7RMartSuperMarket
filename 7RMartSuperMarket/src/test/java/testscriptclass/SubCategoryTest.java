@@ -18,7 +18,7 @@ public class SubCategoryTest extends Base1{
 	SubCategoryPage subcategory;
   @Test
   
-	public void add_subcategory() throws AWTException, IOException{
+	public void verify_add_subcategory() throws AWTException, IOException{
 		LoginPage1 loginPage = new LoginPage1(driver);
 		String username = ExcelUtility.readStringData(3, 0, "LoginPage");
 		String password = ExcelUtility.readStringData(3, 1, "LoginPage");

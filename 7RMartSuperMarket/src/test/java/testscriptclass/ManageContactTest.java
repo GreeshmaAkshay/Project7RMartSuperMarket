@@ -17,7 +17,7 @@ public class ManageContactTest extends Base1 {
 	ManageContactPage contact;
 
 	@Test
-	public void update_contact_details() throws IOException {
+	public void verify_update_contact_details() throws IOException {
 		LoginPage1 loginPage = new LoginPage1(driver);
 		String username = ExcelUtility.readStringData(3, 0, "LoginPage");
 		String password = ExcelUtility.readStringData(3, 1, "LoginPage");

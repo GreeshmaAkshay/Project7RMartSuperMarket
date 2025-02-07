@@ -17,7 +17,7 @@ public class ManageProductTest extends Base1{
 	AdminUsers admin;
 	ManageProductPage manageProduct;
   @Test
-  public void search_product() throws IOException {
+  public void verify_search_productIn_manage_product() throws IOException {
 		LoginPage1 loginPage = new LoginPage1(driver);
 		String username = ExcelUtility.readStringData(3, 0, "LoginPage");
 		String password = ExcelUtility.readStringData(3, 1, "LoginPage");

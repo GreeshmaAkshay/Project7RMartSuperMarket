@@ -17,7 +17,7 @@ public class AdminUsersTest extends Base1{
 	AdminUsers admin;
 	FakerUtility faker;
   @Test(retryAnalyzer = retry.Retry.class)
-  public void save_admin_users() throws IOException {
+  public void verify_save_admin_users() throws IOException {
 		LoginPage1 loginPage = new LoginPage1(driver);
 		String username = ExcelUtility.readStringData(3, 0, "LoginPage");
 		String password = ExcelUtility.readStringData(3, 1, "LoginPage");
@@ -33,7 +33,7 @@ public class AdminUsersTest extends Base1{
 		Assert.assertEquals(statusMessage,Constant.ERROR_MESSAGE_FOR_INVALID_USER_CREATION);
 	}
   @Test
-  public void search_admin_users() throws IOException {
+  public void verify_search_admin_users() throws IOException {
 		LoginPage1 loginPage = new LoginPage1(driver);
 		String username = ExcelUtility.readStringData(3, 0, "LoginPage");
 		String password = ExcelUtility.readStringData(3, 1, "LoginPage");

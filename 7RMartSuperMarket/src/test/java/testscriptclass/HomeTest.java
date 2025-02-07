@@ -16,7 +16,7 @@ public class HomeTest extends Base1{
 	LoginPage1 login;
 	@Test
 	
-	public void admin_Logout() throws IOException {
+	public void verify_admin_Logout() throws IOException {
 		LoginPage1 loginPage = new LoginPage1(driver);
 		String username = ExcelUtility.readStringData(3, 0, "LoginPage");
 		String password = ExcelUtility.readStringData(3, 1, "LoginPage");

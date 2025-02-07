@@ -17,7 +17,7 @@ public class FooterTextTest extends Base1 {
 	FooterTextPage footer;
 
 	@Test
-	public void adding_footer_text() throws IOException {
+	public void verify_adding_footer_text() throws IOException {
 		LoginPage1 loginPage = new LoginPage1(driver);
 		String username = ExcelUtility.readStringData(3, 0, "LoginPage");
 		String password = ExcelUtility.readStringData(3, 1, "LoginPage");
